@@ -7,7 +7,7 @@ const getAllServers = async (req, res) => {
   try {
     const { page = 1, limit = 10 } = req.query;
     const servers = await logic.getAllServers(page, limit);
-    if (!servers) {
+    if (!servers.length) {
       res.status(404).send(noServersMessage);
     }
     res.status(200).send(servers);
