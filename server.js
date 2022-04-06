@@ -7,7 +7,7 @@ const serversRouter = require("./routes/serversRouter");
 const typesRouter = require("./routes/typesRouter");
 
 const uri = process.env.URI;
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
