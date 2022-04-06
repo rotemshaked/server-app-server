@@ -17,7 +17,7 @@ app.use("*", (req, res) => {
   res.send("this route is not defind");
 });
 
-app.listen(port, () => {
+app.listen(8080, () => {
   console.log(`Server is up and running on port ${port}`);
   mongoose.connect(uri, () => {
     console.log("connected to mongoDB!");
