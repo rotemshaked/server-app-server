@@ -9,7 +9,7 @@ const getAllServers = async (page, limit) => {
     .skip((page - 1) * limit);
   pagination.next = await Server.find()
     .limit(limit)
-    .skip((page + 1) * limit);
+    .skip(page * limit);
   return pagination;
 };
 
