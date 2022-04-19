@@ -1,3 +1,4 @@
+const { type } = require("express/lib/response");
 const mongoose = require("mongoose");
 
 const server = mongoose.Schema({
@@ -23,6 +24,7 @@ const server = mongoose.Schema({
     type: Date,
   },
   sumToPay: { type: String, default: "0" },
+  deleted: { type: Boolean, default: false },
 });
 
 const Server = mongoose.model("servers", server);

@@ -3,7 +3,7 @@ const internalServerErrorMessage = "Internal server error";
 const noServersMessage = "No servers were found";
 const incorrectDetailsMessage = "Incorrect details were provided";
 
-const getAllServers = async (req, res) => {
+const getServersByPage = async (req, res) => {
   try {
     const { page = 1, limit = 10 } = req.query;
     const servers = await logic.getAllServers(page, limit);
@@ -57,7 +57,6 @@ const createServer = async (req, res) => {
 
 const create100Servers = async (req, res) => {
   try {
-    const server = req.body;
     const createServer = await logic.create100Servers();
     if (!createServer) {
       res.status(404).send(incorrectDetailsMessage);
@@ -94,7 +93,7 @@ const deleteAll = async (req, res) => {
 };
 
 module.exports = {
-  getAllServers,
+  getServersByPage,
   getServer,
   deleteServer,
   createServer,

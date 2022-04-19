@@ -1,7 +1,7 @@
 const express = require("express");
 const serversRouter = express.Router();
 const {
-  getAllServers,
+  getServersByPage,
   getServer,
   deleteServer,
   createServer,
@@ -10,10 +10,15 @@ const {
   deleteAll,
 } = require("../controllers/servers");
 
-serversRouter.get("/servers", getAllServers);
-serversRouter.put("/servers", changeServerRuning);
-serversRouter.delete("/delete", deleteAll);
-serversRouter.delete("/servers", deleteServer);
+serversRouter
+  .route("/servers")
+  .get(getServersByPage)
+  .put(changeServerRuning)
+  .delete(deleteServer);
+// serversRouter.get("/servers", getServersByPage);
+// serversRouter.put("/servers", changeServerRuning);
+serversRouter.delete("/deleteAll", deleteAll);
+// serversRouter.delete("/servers", deleteServer);
 serversRouter.post("/create", createServer);
 serversRouter.post("/create100", create100Servers);
 

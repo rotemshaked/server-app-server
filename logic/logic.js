@@ -23,7 +23,12 @@ const deleteServer = async (id) => {
   if (!server) {
     return;
   }
-  await Server.deleteOne({ _id: id });
+  if (server.sumToPay !== "0") {
+    server.deleted = true;
+    await server.save();
+  } else {
+    await Server.deleteOne({ _id: id });
+  }
   return server;
 };
 
