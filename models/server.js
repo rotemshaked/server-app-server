@@ -23,7 +23,7 @@ const server = mongoose.Schema({
   endingDate: {
     type: Date,
   },
-  sumToPay: { type: String, default: "0" },
+  sumToPay: { type: String, default: 0 },
   deleted: { type: Boolean, default: false },
 });
 

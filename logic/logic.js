@@ -23,7 +23,7 @@ const deleteServer = async (id) => {
   if (!server) {
     return;
   }
-  if (server.sumToPay !== "0") {
+  if (server.sumToPay !== 0) {
     server.deleted = true;
     await server.save();
   } else {
