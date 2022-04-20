@@ -6,7 +6,7 @@ const incorrectDetailsMessage = "Incorrect details were provided";
 const getServersByPage = async (req, res) => {
   try {
     const { page = 1, limit = 10 } = req.query;
-    const servers = await logic.getAllServers(page, limit);
+    const servers = await logic.getServers(page, limit);
     if (!servers) {
       res.status(404).send(noServersMessage);
     }

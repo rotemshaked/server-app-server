@@ -2,9 +2,9 @@ const { find } = require("../models/server");
 const Server = require("../models/server");
 const Types = require("../models/types");
 
-const getAllServers = async (page, limit) => {
+const getServers = async (page, limit) => {
   const pagination = {};
-  pagination.servers = await Server.find()
+  pagination.servers = await Server.find({ deleted: "false" })
     .limit(limit)
     .skip((page - 1) * limit);
   pagination.next = await Server.find()
@@ -105,7 +105,7 @@ const deleteAll = async () => {
 };
 
 module.exports = {
-  getAllServers,
+  getServers,
   getServer,
   deleteServer,
   createServer,
