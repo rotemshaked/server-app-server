@@ -4,7 +4,7 @@ const Types = require("../models/types");
 
 const getServers = async (page, limit) => {
   const pagination = {};
-  pagination.servers = await Server.find({ _Id: "625f24f94a7a621f77fa69c0" });
+  pagination.servers = await Server.find({ deleted: "false" });
   // .limit(limit)
   // .skip((page - 1) * limit);
   // pagination.next = await Server.find({ deleted: "false" })
