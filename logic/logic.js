@@ -4,12 +4,12 @@ const Types = require("../models/types");
 
 const getServers = async (page, limit) => {
   const pagination = {};
-  pagination.servers = await Server.find({ deleted: "false" });
-  // .limit(limit)
-  // .skip((page - 1) * limit);
-  // pagination.next = await Server.find({ deleted: "false" })
-  //   .limit(limit)
-  //   .skip(page * limit);
+  pagination.servers = await Server.find({ deleted: "false" })
+    .limit(limit)
+    .skip((page - 1) * limit);
+  pagination.next = await Server.find({ deleted: "false" })
+    .limit(limit)
+    .skip(page * limit);
   console.log();
   return pagination;
 };
