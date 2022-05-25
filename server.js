@@ -6,7 +6,8 @@ const app = express();
 const serversRouter = require("./routes/serversRouter");
 const typesRouter = require("./routes/typesRouter");
 
-const uri = process.env.URI;
+const uri =
+  "mongodb+srv://rotem:password@cluster0.bst3nl4.mongodb.net/?retryWrites=true&w=majority";
 const port = process.env.PORT || 3000;
 
 app.use(cors());
