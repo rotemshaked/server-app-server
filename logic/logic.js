@@ -49,6 +49,7 @@ const createServer = async (server) => {
 const create100Servers = async () => {
   let newServer;
   const types = await getAllTypes();
+  console.log(types);
   try {
     for (let i = 1; i <= 100; i++) {
       let name = `Server - ${i}`;
