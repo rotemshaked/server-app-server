@@ -30,7 +30,7 @@ const getServer = async (req, res) => {
 };
 const getAllServers = async (req, res) => {
   try {
-    const servers = await logic.getAllServers(id);
+    const servers = await logic.getAllServers();
     if (!servers) {
       res.status(404).send(incorrectDetailsMessage);
     }
