@@ -20,6 +20,7 @@ const getServer = async (id) => {
 };
 const findFromAllServers = async (input) => {
   const servers = await Server.find({ name: { $regex: `^${input}` } });
+  // const servers = await Server.find({ name: { $regex: `^${input}` } });
   return servers;
 };
 

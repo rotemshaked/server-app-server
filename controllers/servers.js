@@ -30,7 +30,8 @@ const getServer = async (req, res) => {
 };
 const findFromAllServers = async (req, res) => {
   try {
-    const servers = await logic.findFromAllServers();
+    let input = req.input;
+    const servers = await logic.findFromAllServers(input);
     if (!servers) {
       res.status(404).send(incorrectDetailsMessage);
     }
