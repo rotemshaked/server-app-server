@@ -54,13 +54,12 @@ const create100Servers = async () => {
       let name = `Server - ${i}`;
       let ipAddress = `${i}.${i}.${i}.${i}`;
       let randomNumber = Math.floor(Math.random() * 3) + 1;
-      let typeId = types[randomNumber];
+      let typeId = await types[randomNumber];
       newServer = await new Server({
         ipAddress: ipAddress,
         name: name,
         type: typeId,
       });
-      console.log(newServer);
       await newServer.save();
     }
   } catch (err) {
