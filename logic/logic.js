@@ -1,4 +1,3 @@
-const { find } = require("../models/server");
 const Server = require("../models/server");
 const Types = require("../models/types");
 
@@ -17,11 +16,6 @@ const getServers = async (page, limit) => {
 const getServer = async (id) => {
   const server = await Server.findById(id);
   return server;
-};
-const findFromAllServers = async (input) => {
-  const servers = await Server.find({ name: { $regex: `^${input}` } });
-  // const servers = await Server.find({ name: { $regex: `^${input}` } });
-  return servers;
 };
 
 const deleteServer = async (id) => {
@@ -120,5 +114,4 @@ module.exports = {
   changeServerRuning,
   create100Servers,
   deleteAll,
-  findFromAllServers,
 };

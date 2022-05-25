@@ -28,18 +28,6 @@ const getServer = async (req, res) => {
     res.status(500).send(internalServerErrorMessage);
   }
 };
-const findFromAllServers = async (req, res) => {
-  try {
-    let input = req.input;
-    const servers = await logic.findFromAllServers(input);
-    if (!servers) {
-      res.status(404).send(incorrectDetailsMessage);
-    }
-    res.status(200).send(servers);
-  } catch {
-    res.status(500).send(internalServerErrorMessage);
-  }
-};
 
 const deleteServer = async (req, res) => {
   try {
