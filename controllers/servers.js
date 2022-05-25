@@ -100,5 +100,4 @@ module.exports = {
   changeServerRuning,
   create100Servers,
   deleteAll,
-  findFromAllServers,
 };
