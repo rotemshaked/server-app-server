@@ -8,6 +8,7 @@ const {
   changeServerRuning,
   create100Servers,
   deleteAll,
+  getAllServers,
 } = require("../controllers/servers");
 
 serversRouter
@@ -15,7 +16,7 @@ serversRouter
   .get(getServersByPage)
   .put(changeServerRuning)
   .delete(deleteServer);
-// serversRouter.get("/servers", getServersByPage);
+serversRouter.get("/allservers", getAllServers);
 // serversRouter.put("/servers", changeServerRuning);
 serversRouter.delete("/deleteAll", deleteAll);
 // serversRouter.delete("/servers", deleteServer);

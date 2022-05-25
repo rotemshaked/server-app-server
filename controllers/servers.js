@@ -28,6 +28,17 @@ const getServer = async (req, res) => {
     res.status(500).send(internalServerErrorMessage);
   }
 };
+const getAllServers = async (req, res) => {
+  try {
+    const servers = await logic.getAllServers(id);
+    if (!servers) {
+      res.status(404).send(incorrectDetailsMessage);
+    }
+    res.status(200).send(servers);
+  } catch {
+    res.status(500).send(internalServerErrorMessage);
+  }
+};
 
 const deleteServer = async (req, res) => {
   try {
@@ -100,4 +111,5 @@ module.exports = {
   changeServerRuning,
   create100Servers,
   deleteAll,
+  getAllServers,
 };

@@ -18,6 +18,10 @@ const getServer = async (id) => {
   const server = await Server.findById(id);
   return server;
 };
+const getAllServers = async () => {
+  const servers = await Server.find();
+  return servers;
+};
 
 const deleteServer = async (id) => {
   const server = await Server.findById(id);
@@ -115,4 +119,5 @@ module.exports = {
   changeServerRuning,
   create100Servers,
   deleteAll,
+  getAllServers,
 };
