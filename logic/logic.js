@@ -18,8 +18,8 @@ const getServer = async (id) => {
   const server = await Server.findById(id);
   return server;
 };
-const getAllServers = async () => {
-  const servers = await Server.find();
+const findFromAllServers = async (input) => {
+  const servers = await Server.find({ name: { $regex: `^${input}` } });
   return servers;
 };
 
@@ -119,5 +119,5 @@ module.exports = {
   changeServerRuning,
   create100Servers,
   deleteAll,
-  getAllServers,
+  findFromAllServers,
 };
