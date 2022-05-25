@@ -61,7 +61,7 @@ const create100Servers = async () => {
         type: typeId,
       });
       console.log(newServer);
-      // await newServer.save();
+      await newServer.save();
     }
   } catch (err) {
     console.log(err);
