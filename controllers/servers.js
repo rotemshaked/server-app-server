@@ -45,7 +45,6 @@ const deleteServer = async (req, res) => {
 const createServer = async (req, res) => {
   try {
     const server = req.body;
-    console.log(server);
     const createServer = await logic.createServer(server);
     if (!createServer) {
       res.status(404).send(incorrectDetailsMessage);

@@ -33,14 +33,11 @@ const deleteServer = async (id) => {
 };
 
 const createServer = async (server) => {
-  console.log(newServer, "newServer at logic before");
-
   const newServer = await new Server({
     ipAddress: server.ipAddress,
     name: server.name,
     type: server.typeId,
   });
-  console.log(newServer, "newServer at logic after");
   if (!newServer) {
     return;
   }
