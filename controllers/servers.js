@@ -94,7 +94,7 @@ const deleteAll = async (req, res) => {
 
 module.exports = {
   getServersByPage,
-  getServer,
+  // getServer,
   deleteServer,
   createServer,
   changeServerRuning,
